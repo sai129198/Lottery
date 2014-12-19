@@ -1,26 +1,19 @@
 package com.lottery.ui;
 
-import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
-import javax.swing.JTextField;
-import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
-
-import com.lottery.common.StringRsc;
 import com.lottery.util.ParamUtil;
 import com.lottery.util.ResourceUtil;
-import com.lottery.util.XMLUtil;
 
 public class ParamSettingFrame extends JFrame {
 

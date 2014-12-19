@@ -13,7 +13,6 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSpinner;
-import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
 import com.lottery.util.ParamUtil;
@@ -134,9 +133,5 @@ public class DisplaySettingFrame extends JFrame {
 	
 	private void setFontSizeToConfig(int size){
 		ParamUtil.setFontSizeToConfig(size);
-	}
-	
-	public static void main(String a[]){
-		new DisplaySettingFrame();
 	}
 }

@@ -1,6 +1,5 @@
 package com.lottery.main;
 
-import com.lottery.model.Lottery;
 import com.lottery.ui.MainFrame;
 
 public class Main {
