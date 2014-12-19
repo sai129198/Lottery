@@ -17,6 +17,7 @@ import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
 import com.lottery.util.ParamUtil;
+import com.lottery.util.ResourceUtil;
 
 public class DisplaySettingFrame extends JFrame {
 	
@@ -107,6 +108,8 @@ public class DisplaySettingFrame extends JFrame {
 		this.setSize(200, 140);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
+		
+		ResourceUtil.setIcon(this);
 		
 	}
 	

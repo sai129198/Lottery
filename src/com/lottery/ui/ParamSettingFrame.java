@@ -19,6 +19,7 @@ import javax.swing.SpinnerNumberModel;
 
 import com.lottery.common.StringRsc;
 import com.lottery.util.ParamUtil;
+import com.lottery.util.ResourceUtil;
 import com.lottery.util.XMLUtil;
 
 public class ParamSettingFrame extends JFrame {
@@ -90,6 +91,8 @@ public class ParamSettingFrame extends JFrame {
 		this.setResizable(false);
 		this.setSize(250, 130);
 		this.setLocationRelativeTo(null);
+		
+		ResourceUtil.setIcon(this);
 	}
 	
 	public static ParamSettingFrame getInstance(){

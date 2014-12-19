@@ -19,6 +19,7 @@ import javax.swing.SwingUtilities;
 
 import com.lottery.model.LotteryThread;
 import com.lottery.util.ParamUtil;
+import com.lottery.util.ResourceUtil;
 
 public class MainFrame extends JFrame {
 	
@@ -76,6 +77,8 @@ public class MainFrame extends JFrame {
 		
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		this.setResizable(true);
+		
+		ResourceUtil.setIcon(this);
 		//this.setMinimumSize(this.getMinimumSize());
 	}
 	

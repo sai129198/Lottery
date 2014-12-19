@@ -9,6 +9,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
+import com.lottery.util.ResourceUtil;
+
 public class AboutFrame extends JFrame {
 	
 	private static AboutFrame singleton;
@@ -49,6 +51,8 @@ public class AboutFrame extends JFrame {
 		this.setResizable(false);
 		this.setSize(380, 360);
 		this.setLocationRelativeTo(null);
+		
+		ResourceUtil.setIcon(this);
 		
 	}
 	

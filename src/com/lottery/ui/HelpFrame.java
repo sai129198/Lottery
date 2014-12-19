@@ -4,6 +4,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextArea;
 
+import com.lottery.util.ResourceUtil;
+
 public class HelpFrame extends JFrame {
 	
 	private static HelpFrame singleton;
@@ -23,6 +25,8 @@ public class HelpFrame extends JFrame {
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
 		this.setVisible(true);
+		
+		ResourceUtil.setIcon(this);
 	}
 	
 	public static HelpFrame getInstance(){
