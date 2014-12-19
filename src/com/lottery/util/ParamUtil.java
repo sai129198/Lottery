@@ -72,4 +72,29 @@ public class ParamUtil {
 			return Color.RED;
 		}
 	}
+	
+	public static int getFontSizeFromConfig(){
+		XMLUtil xmlUtil;
+		try {
+			xmlUtil = XMLUtil.getXMLUtil(StringRsc.CONFIG_PATH);
+			return Integer.parseInt(xmlUtil.getParam("size"));
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "读取配置文件失败，请检查config.xml文件是否丢失。", "错误", JOptionPane.ERROR_MESSAGE);
+			return 576;
+		}
+	}
+	
+	public static void setFontSizeToConfig(int size){
+		XMLUtil xmlUtil;
+		try {
+			xmlUtil = XMLUtil.getXMLUtil(StringRsc.CONFIG_PATH);
+			xmlUtil.setParam("size", size+"");
+			xmlUtil.commit();
+		} catch (Exception e) {
+			e.printStackTrace();
+			JOptionPane.showMessageDialog(null, "写入配置文件失败，请检查config.xml文件是否丢失。", "错误", JOptionPane.ERROR_MESSAGE);
+			return;
+		}
+	}
 }
