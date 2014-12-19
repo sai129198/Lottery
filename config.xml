@@ -2,5 +2,5 @@
 <root>
 	<min>200</min>
 	<max>12000</max>
-	<color>Red</color>
+	<color r="204" g="0" b="0"/>
 </root>

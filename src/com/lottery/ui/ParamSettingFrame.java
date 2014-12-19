@@ -48,7 +48,17 @@ public class ParamSettingFrame extends JFrame {
 				if(result == JOptionPane.YES_OPTION){
 					ParamUtil.writeParamSetting(min, max);	//写参数到配置文件中
 					ParamSettingFrame.this.setVisible(false);
+					try {
+						ParamSettingFrame.this.finalize();
+					} catch (Throwable e1) {
+						e1.printStackTrace();
+					}
 				} else {
+					try {
+						ParamSettingFrame.this.finalize();
+					} catch (Throwable e1) {
+						e1.printStackTrace();
+					}
 					return;
 				}
 			}

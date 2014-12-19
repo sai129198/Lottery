@@ -16,7 +16,7 @@ public class LotteryMenu extends JMenuBar {
 	private final String[] helpItems = new String[] {"使用方法" ,"关于"};
 	
 	private final char[] fileShortcuts = new char[] {'B','O','N','E'};
-	private final char[] settingShortcuts = new char[] {'P', 'S'};
+	private final char[] settingShortcuts = new char[] {'P', 'D'};
 	private final char[] helpShortcuts = new char[] {'U', 'A'};
 	
 	private JMenu fileMenu;
@@ -70,6 +70,8 @@ public class LotteryMenu extends JMenuBar {
 				ParamSettingFrame.getInstance().setVisible(true);
 			} else if (command.equals("关于")) {
 				AboutFrame.getInstance().setVisible(true);
+			} else if (command.equals("显示")) {
+				DisplaySettingFrame.getInstance().setVisible(true);
 			}
 			System.out.println("Menu item [" + event.getActionCommand( ) +"] was pressed.");
 		}

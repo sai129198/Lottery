@@ -1,9 +1,11 @@
 package com.lottery.util;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;
@@ -59,7 +61,25 @@ public class XMLUtil {
 	public void setParam(String elementName, String value) throws IOException{
 		Element root = dom.getRootElement();
 		root.element(elementName).setText(value);
+	}
+	
+	
+	public String getAttribute(String elementName, String attributeName){
+		Element root = dom.getRootElement();
+		return root.element(elementName).attributeValue(attributeName);
+	}
+	
+	public void setAttribute(String elementName, String attributeName, String attributeValue) throws IOException{
+		Element root = dom.getRootElement();
+		//root.element(elementName).setAttributeValue(attributeName, attributeValue);
+		root.element(elementName).attribute(attributeName).setValue(attributeValue);
 		
+	}
+	
+	/**
+	 * 将对dom的改变保存到配置文件中
+	 */
+	public void commit() throws IOException{
 		XMLWriter writer = new XMLWriter();
 		writer.setOutputStream(new FileOutputStream(new File(StringRsc.CONFIG_PATH)));
 		writer.write(dom);
