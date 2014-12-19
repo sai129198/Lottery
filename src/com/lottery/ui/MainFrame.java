@@ -70,7 +70,7 @@ public class MainFrame extends JFrame {
 		});
 		
 		Container c = this.getContentPane();
-		c.add(numLabel);
+		c.add(numLabel, "North");
 		c.add(nextNumberBtn, "South");
 		
 		this.setExtendedState(JFrame.MAXIMIZED_BOTH);
