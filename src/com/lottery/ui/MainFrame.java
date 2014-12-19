@@ -1,15 +1,30 @@
 package com.lottery.ui;
 
+import java.awt.Container;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
+import java.util.List;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
+
+import com.lottery.model.LotteryThread;
+import com.lottery.util.ParamUtil;
 
 public class MainFrame extends JFrame {
 	
+	private List<Integer> numberList;
+	
 	public MainFrame(){
 		super("Lottery");
+		this.numberList = new ArrayList<Integer>();
 		
 		this.setJMenuBar(new LotteryMenu());
 		
@@ -28,5 +43,27 @@ public class MainFrame extends JFrame {
 				}
 			}
 		});
+		
+		//抽奖相关
+		
+		final JLabel numLabel = new JLabel("0");
+		final JButton nextNumberBtn = new JButton("下一个");
+		final boolean btnFlag = true;
+		nextNumberBtn.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				nextNumberBtn.setEnabled(!nextNumberBtn.isEnabled());
+				
+				int min = ParamUtil.getMinFromConfig();
+				int max = ParamUtil.getMaxFromConfig();
+				LotteryThread thread = LotteryThread.getInstance(min, max, numLabel, nextNumberBtn, numberList);
+				thread.start();
+			}
+		});
+		
+		Container c = this.getContentPane();
+		c.add(numLabel);
+		c.add(nextNumberBtn, "South");
+		
 	}
 }

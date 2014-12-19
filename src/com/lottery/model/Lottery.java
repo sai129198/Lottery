@@ -1,13 +1,20 @@
 package com.lottery.model;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
+
+import javax.swing.JOptionPane;
 
 public class Lottery {
 	
 	private Random random;
 	
+	private List<Integer> numberList;
+	
 	public Lottery(){
 		this.random = new Random(System.currentTimeMillis());
+		this.numberList = new ArrayList<Integer>();
 	}
 	
 	/**
@@ -23,7 +30,7 @@ public class Lottery {
 		}
 		
 		int num = this.random.nextInt(end+1 - begin);
-
+		
 		return num + (begin - 0);
 	}
 }

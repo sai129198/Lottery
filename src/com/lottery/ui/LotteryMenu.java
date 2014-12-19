@@ -8,6 +8,7 @@ import java.awt.event.InputEvent;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 public class LotteryMenu extends JMenuBar {
@@ -65,13 +66,20 @@ public class LotteryMenu extends JMenuBar {
 		public void actionPerformed(ActionEvent event) {
 			String command = event.getActionCommand();
 			if(command.equals("退出")){
-				System.exit(0);
+				int result = JOptionPane.showConfirmDialog(LotteryMenu.this, "确认退出抽奖程序吗？", "确认", JOptionPane.YES_NO_OPTION);
+				if(result == JOptionPane.YES_OPTION){
+					System.exit(0);
+				} else {
+					return;
+				}
 			} else if (command.equals("参数")) {
 				ParamSettingFrame.getInstance().setVisible(true);
 			} else if (command.equals("关于")) {
 				AboutFrame.getInstance().setVisible(true);
 			} else if (command.equals("显示")) {
 				DisplaySettingFrame.getInstance().setVisible(true);
+			} else if (command.equals("开始下一次抽奖")) {
+				//需要将Frame的list清空
 			}
 			System.out.println("Menu item [" + event.getActionCommand( ) +"] was pressed.");
 		}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
-	<min>200</min>
-	<max>12000</max>
+	<min>1</min>
+	<max>500</max>
 	<color r="204" g="0" b="0"/>
 </root>
