@@ -22,14 +22,14 @@ import com.lottery.util.ParamUtil;
 
 public class MainFrame extends JFrame {
 	
-	private List<Integer> numberList;
+	private static List<Integer> numberList;
 	private Color color = ParamUtil.getColorFromConfig();
 	
 	private static int fontSize = ParamUtil.getFontSizeFromConfig();
 	private static JLabel numLabel;
 	
 	public MainFrame(){
-		super("Lottery");
+		super("抽奖机");
 		this.numberList = new ArrayList<Integer>();
 		
 		this.setJMenuBar(new LotteryMenu());
@@ -88,5 +88,12 @@ public class MainFrame extends JFrame {
 	
 	public static void setLabelColor(Color color){
 		numLabel.setForeground(color);
+	}
+	
+	/**
+	 * 清空numList
+	 */
+	public static void replay(){
+		numberList.clear();
 	}
 }

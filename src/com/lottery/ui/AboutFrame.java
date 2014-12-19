@@ -2,6 +2,7 @@ package com.lottery.ui;
 
 
 import java.awt.Container;
+import java.awt.Font;
 import java.awt.GridLayout;
 
 import javax.swing.JFrame;
@@ -24,7 +25,17 @@ public class AboutFrame extends JFrame {
 		JLabel label4 = new JLabel("Q Q：");
 		JTextField qq = new JTextField("564923716");
 		qq.setEditable(false);
-
+		
+		Font font = new Font("Times New Roma", Font.PLAIN, 32);
+		label1.setFont(font);
+		label2.setFont(font);
+		label3.setFont(font);
+		label4.setFont(font);
+		name.setFont(font);
+		version.setFont(font);
+		author.setFont(font);
+		qq.setFont(font);
+		
 		Container c= this.getContentPane();
 		c.add(label1);
 		c.add(name);
@@ -36,7 +47,8 @@ public class AboutFrame extends JFrame {
 		c.add(qq);
 		
 		this.setResizable(false);
-		this.setBounds(450, 340, 160, 160);
+		this.setSize(380, 360);
+		this.setLocationRelativeTo(null);
 		
 	}
 	

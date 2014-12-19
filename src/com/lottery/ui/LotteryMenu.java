@@ -12,11 +12,11 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 
 public class LotteryMenu extends JMenuBar {
-	private final String[] fileItems = new String[] {"开始抽奖", "结束抽奖", "开始下一次抽奖", "退出"};
+	private final String[] fileItems = new String[] {"重新开始抽奖", "退出"};
 	private final String[] settingItems = new String[] {"参数","显示"};
 	private final String[] helpItems = new String[] {"使用方法" ,"关于"};
 	
-	private final char[] fileShortcuts = new char[] {'B','O','N','E'};
+	private final char[] fileShortcuts = new char[] {'R','E'};
 	private final char[] settingShortcuts = new char[] {'P', 'D'};
 	private final char[] helpShortcuts = new char[] {'U', 'A'};
 	
@@ -78,8 +78,12 @@ public class LotteryMenu extends JMenuBar {
 				AboutFrame.getInstance().setVisible(true);
 			} else if (command.equals("显示")) {
 				DisplaySettingFrame.getInstance().setVisible(true);
-			} else if (command.equals("开始下一次抽奖")) {
-				//需要将Frame的list清空
+			} else if (command.equals("重新开始抽奖")) {
+				//将Frame的list清空
+				MainFrame.replay();
+				JOptionPane.showMessageDialog(null, "已经清空投票机出现过的数字。");
+			} else if (command.equals("使用方法")){
+				HelpFrame.getInstance().setVisible(true);
 			}
 			System.out.println("Menu item [" + event.getActionCommand( ) +"] was pressed.");
 		}

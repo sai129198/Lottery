@@ -104,8 +104,9 @@ public class DisplaySettingFrame extends JFrame {
 		c.add(btnPanel);
 		
 		this.setVisible(true);
-		this.setBounds(480, 320, 200, 140);
+		this.setSize(200, 140);
 		this.setResizable(false);
+		this.setLocationRelativeTo(null);
 		
 	}
 	

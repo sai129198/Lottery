@@ -88,7 +88,8 @@ public class ParamSettingFrame extends JFrame {
 		
 		
 		this.setResizable(false);
-		this.setBounds(400, 220, 250, 130);
+		this.setSize(250, 130);
+		this.setLocationRelativeTo(null);
 	}
 	
 	public static ParamSettingFrame getInstance(){
