@@ -32,9 +32,9 @@ public class MainFrame extends JFrame {
 		this.numberList = new ArrayList<Integer>();
 		
 		this.setJMenuBar(new LotteryMenu());
-		
+		//this.setVisible(true);
 		//this.setBounds(320, 180, 400, 400);
-		this.setVisible(true);
+		
 		this.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 	
 		this.addWindowListener(new WindowAdapter(){
@@ -53,7 +53,7 @@ public class MainFrame extends JFrame {
 		
 		numLabel = new JLabel("0", JLabel.CENTER);
 		numLabel.setForeground(color);
-		numLabel.setFont(new Font("New Romas Times", Font.PLAIN, fontSize));
+		numLabel.setFont(new Font("宋体", Font.PLAIN, fontSize));
 		
 		final JButton nextNumberBtn = new JButton("下一个");
 		final boolean btnFlag = true;
@@ -77,6 +77,7 @@ public class MainFrame extends JFrame {
 		this.setResizable(true);
 		
 		ResourceUtil.setIcon(this);
+		//this.setVisible(true);
 		//this.setMinimumSize(this.getMinimumSize());
 	}
 	
@@ -84,7 +85,7 @@ public class MainFrame extends JFrame {
 		if(size < 10 || size > 1000) {
 			size = 576;
 		}
-		numLabel.setFont(new Font("Times New Roma", Font.PLAIN, size));
+		numLabel.setFont(new Font("宋体", Font.PLAIN, size));
 	}
 	
 	public static void setLabelColor(Color color){

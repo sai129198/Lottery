@@ -28,7 +28,7 @@ public class AboutFrame extends JFrame {
 		JTextField qq = new JTextField("564923716");
 		qq.setEditable(false);
 		
-		Font font = new Font("Times New Roma", Font.PLAIN, 32);
+		Font font = new Font("宋体", Font.PLAIN, 32);
 		label1.setFont(font);
 		label2.setFont(font);
 		label3.setFont(font);

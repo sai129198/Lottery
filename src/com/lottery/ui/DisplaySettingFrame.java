@@ -103,13 +103,11 @@ public class DisplaySettingFrame extends JFrame {
 		c.add(sizePanel);
 		c.add(btnPanel);
 		
-		this.setVisible(true);
 		this.setSize(200, 140);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		
 		ResourceUtil.setIcon(this);
-		
+		//this.setVisible(true);
 	}
 	
 	public static DisplaySettingFrame getInstance(){

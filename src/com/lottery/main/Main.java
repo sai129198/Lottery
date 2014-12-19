@@ -9,8 +9,8 @@ public class Main {
 	 * @throws Exception 
 	 */
 	public static void main(String[] args) throws Exception {
-		new MainFrame();
-		
+		MainFrame frame = new MainFrame();
+		frame.setVisible(true);
 		//System.out.println(new Lottery().nextInt(3,5));
 	}
 

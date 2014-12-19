@@ -23,9 +23,9 @@ public class HelpFrame extends JFrame {
 		this.setSize(400, 120);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
-		this.setVisible(true);
 		
 		ResourceUtil.setIcon(this);
+		
 	}
 	
 	public static HelpFrame getInstance(){
